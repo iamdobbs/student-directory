@@ -20,23 +20,23 @@ def input_students
 end   
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The students of Villains Academy".center(70)
+  puts "-------------".center(70)
 end
 
 def print(students)
     c = 0
     i = 0
     while c != students.count do
-    puts "#{students[i][:name]} (#{students[i][:cohort]} cohort). Hobbies include: #{students[i][:hobbies]}. 
-    Place of birth: #{students[i][:birthplace]}"
+    puts "#{students[i][:name]} (#{students[i][:cohort]} cohort)".center(70)
+    puts "Hobbies include: #{students[i][:hobbies]}. Place of birth: #{students[i][:birthplace]}".center(70)
     i += 1
     c += 1
   end  
 end 
   
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  puts "Overall, we have #{students.count} great students".center(70)
 end
 
 # nothing happens until we call the method
