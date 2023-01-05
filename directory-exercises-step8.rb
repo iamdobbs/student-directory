@@ -1,3 +1,5 @@
+@name_initial = "A"
+
 def input_students
   puts "Please enter the names of the students"
   puts "To finish, just hit return twice"
@@ -17,6 +19,10 @@ def input_students
   students
 end   
 
+def first_name_initial
+  puts "View students by first initial. Type initial now"
+  @name_initial = gets.chomp
+end  
 
 def print_header
   puts "The students of Villains Academy"
@@ -25,7 +31,7 @@ end
 
 def print(students)
   students.select do |student|
-    if student[:name].length < 12
+    if student[:name][0] == @name_initial
     puts "#{student[:name]} (#{student[:cohort]} cohort)"
     end
   end  
@@ -39,6 +45,7 @@ end
 
 # nothing happens until we call the method
 students = input_students
+first_name_initial
 print_header
 print(students)
 print_footer(students)
